@@ -138,6 +138,14 @@ static PyObject* PythonTypeFromSqlType(Cursor* cur, const SQLCHAR* name, SQLSMAL
     //   The ODBC C type (SQL_C_CHAR, etc.) of the column.
     //
     // The returned object does not have its reference count incremented!
+    
+
+    //PATCHED TO *ALWAYS* RETURN STRING TYPES
+    PyObject* pytype = 0;
+    pytype = (PyObject*)&PyString_Type;
+    Py_INCREF(pytype);
+    return pytype;
+    //END OF PATCH
 
     int conv_index = GetUserConvIndex(cur, type);
     if (conv_index != -1)
