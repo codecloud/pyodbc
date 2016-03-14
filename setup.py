@@ -99,6 +99,8 @@ def main():
                        'Topic :: Database',
                        ],
 
+        'download_url': 'https://github.com/codecloud/pyodbc-raw/tarball/raw-output',
+
         'url': 'https://github.com/codecloud/pyodbc-raw',
         'cmdclass': { 'version' : VersionCommand,
                      'tags'    : TagsCommand }
