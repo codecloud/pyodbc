@@ -73,17 +73,17 @@ def main():
         os.remove('MANIFEST')
 
     kwargs = {
-        'name': "pyodbc",
+        'name': "pyodbc-raw",
         'version': version_str,
         'description': "DB API Module for ODBC",
 
         'long_description': ('A Python DB API 2 module for ODBC. This project provides an up-to-date, '
-                            'convenient interface to ODBC using native data types like datetime and decimal.'),
+                            'convenient interface to ODBC. All data is returned as Python strings'),
         
-        'maintainer':       "Michael Kleehammer",
-        'maintainer_email': "michael@kleehammer.com",
+        'maintainer':       "David Smith",
+        'maintainer_email': "dave@code-cloud.co.uk",
         
-        'ext_modules': [Extension('pyodbc', files, **settings)],
+        'ext_modules': [Extension('pyodbc-raw', files, **settings)],
 
         'license': 'MIT',
 
@@ -99,7 +99,7 @@ def main():
                        'Topic :: Database',
                        ],
 
-        'url': 'https://github.com/mkleehammer/pyodbc',
+        'url': 'https://github.com/codecloud/pyodbc-raw',
         'cmdclass': { 'version' : VersionCommand,
                      'tags'    : TagsCommand }
         }
