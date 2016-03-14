@@ -108,20 +108,6 @@ static Cursor* Cursor_Validate(PyObject* obj, DWORD flags)
 
 inline bool IsNumericType(SQLSMALLINT sqltype)
 {
-    switch (sqltype)
-    {
-    case SQL_DECIMAL:
-    case SQL_NUMERIC:
-    case SQL_REAL:
-    case SQL_FLOAT:
-    case SQL_DOUBLE:
-    case SQL_SMALLINT:
-    case SQL_INTEGER:
-    case SQL_TINYINT:
-    case SQL_BIGINT:
-        return true;
-    }
-
     return false;
 }
 
